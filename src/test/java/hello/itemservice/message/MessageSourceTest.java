@@ -44,6 +44,10 @@ public class MessageSourceTest {
         //hello.name=안녕 {0} -> {0} 부분은 매개변수(args: Spring) 전달 ->안녕 Spring
     }
 
+
+    /** locale 정보를 기반으로 "국제화 파일을 선택"
+     * Locale 에 맞추어 구체적인 것이 있으면 구체적인 것을 찾고, 없으면 디폴트를 찾는다
+     * */
     @Test
     void defaultLang() {
         assertThat(ms.getMessage("hello", null, null)).isEqualTo("안녕");
